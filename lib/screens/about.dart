@@ -25,13 +25,13 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   bool isEditing = false;
 
-  final mondayController = TextEditingController(text: '8h - 18H');
-  final tuesdayController = TextEditingController(text: '8h - 18h');
-  final wednesdayController = TextEditingController(text: '8h - 18h');
-  final thursdayController = TextEditingController(text: '8h - 18h');
-  final fridayController = TextEditingController(text: '8h - 18h');
-  final saturdayController = TextEditingController(text: '8h - 2h');
-  final sundayController = TextEditingController(text: 'Fermé');
+  final mondayController = TextEditingController();
+  final tuesdayController = TextEditingController();
+  final wednesdayController = TextEditingController();
+  final thursdayController = TextEditingController();
+  final fridayController = TextEditingController();
+  final saturdayController = TextEditingController();
+  final sundayController = TextEditingController();
 
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -40,6 +40,12 @@ class _AboutState extends State<About> {
 
   final _formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  initState() {
+    super.initState();
+    BlocProvider.of<SchedulesBloc>(context).add(const GetSchedules());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -295,6 +301,7 @@ class _AboutState extends State<About> {
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   mainAxisSize: MainAxisSize.min,
                                                   children: [
+                                                    height16,
                                                     Schedule(readOnly: !isEditing, controller: mondayController, label: state.schedules.monday),
                                                     height6,
                                                     Schedule(readOnly: !isEditing, controller: tuesdayController, label: state.schedules.tuesday),
