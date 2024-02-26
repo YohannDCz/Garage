@@ -56,17 +56,17 @@ class MyDrawer extends StatelessWidget {
 
           /// I put this here to redirect the user to the login page if he is not logged in
           /// It is here because of the spacing of the different elements
-          ValueListenableBuilder(
-            valueListenable: context.read<AuthenticationService>().isLoggedIn,
-            builder: (context, isLoggedIn, child) {
-              if (!isLoggedIn) {
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  Navigator.of(context).pushNamedAndRemoveUntil('/signin', (route) => false);
-                });
-              }
-              return Container();
-            },
-          ),
+          // ValueListenableBuilder(
+          //   valueListenable: context.read<AuthenticationService>().isLoggedIn,
+          //   builder: (context, isLoggedIn, child) {
+          //     if (!isLoggedIn) {
+          //       WidgetsBinding.instance.addPostFrameCallback((_) {
+          //         Navigator.of(context).pushNamedAndRemoveUntil('/signin', (route) => false);
+          //       });
+          //     }
+          //     return Container();
+          //   },
+          // ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton(

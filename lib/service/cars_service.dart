@@ -15,7 +15,7 @@ class CarsService {
     List<Car> cars = [];
 
     try {
-      response = await Supabase.instance.client.from('cars').select();
+      response = await Supabase.instance.client.from('cars').select().order('created_at', ascending: false);
       cars = response.map((e) => Car.fromMap(e)).toList();
     } catch (e) {
       debugPrint('Erreur lors de la récupération des voitures : $e');
@@ -90,11 +90,18 @@ class CarsService {
     await Supabase.instance.client.rest.from('cars').delete().eq('id', id);
   }
 
-  List<Car> filterCars(List<Car> cars, {required int minPrice, required int maxPrice, required int minYear, required int maxYear, required int minKilometers, required int maxKilometers}) {
+  List<Car> filterCars(List<Car> cars,
+      {required int minPrice,
+      required int maxPrice,
+      required int minYear,
+      required int maxYear,
+      required int minKilometers,
+      required int maxKilometers}) {
     return cars.where((car) {
       bool matchesPrice = (minPrice == 0 || car.price >= minPrice) && (maxPrice == 0 || car.price <= maxPrice);
       bool matchesYear = (minYear == 0 || car.year >= minYear) && (maxYear == 0 || car.year <= maxYear);
-      bool matchesKilometers = (minKilometers == 0 || car.kilometers >= minKilometers) && (maxKilometers == 0 || car.kilometers <= maxKilometers);
+      bool matchesKilometers = (minKilometers == 0 || car.kilometers >= minKilometers) &&
+          (maxKilometers == 0 || car.kilometers <= maxKilometers);
       return matchesPrice && matchesYear && matchesKilometers;
     }).toList();
   }

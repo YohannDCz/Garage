@@ -57,7 +57,8 @@ class GarageApp extends StatelessWidget {
       ],
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => AuthenticationBloc(authenticationService: context.read<AuthenticationService>())),
+          BlocProvider(
+              create: (context) => AuthenticationBloc(authenticationService: context.read<AuthenticationService>())),
           BlocProvider(create: (context) => CarsBloc(carService: context.read<CarsService>())),
           BlocProvider(create: (context) => RatingsBloc(ratingsService: context.read<RatingsService>())),
           BlocProvider(create: (context) => EmailBloc(emailService: context.read<EmailService>())),
@@ -66,7 +67,8 @@ class GarageApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Garage V. Parrot',
           theme: appTheme,
-          initialRoute: '/signin',
+          // initialRoute: '/signin',
+          home: const About(),
           routes: {
             '/signin': (context) => const SignIn(),
             '/signup': (context) => const SignUp(),
