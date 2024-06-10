@@ -9,7 +9,7 @@ List<Map<String, String>> assets = [
     "image": "https://pmuxdgydlrpgzmndnfon.supabase.co/storage/v1/object/public/cars/services/service2.jpeg?t=2024-02-09T09%3A32%3A34.798Z",
     "titre": "Réparations",
     "description":
-        "Notre équipe de techniciens qualifiés est équipée pour gérer toutes sortes de problèmes mécaniques, que ce soit pour un entretien routinier ou des réparations complexes. Nous utilisons des pièces de rechange de qualité et des outils de diagnostic à la pointe de la technologie pour garantir que votre véhicule fonctionne à son meilleur niveau. Que vous ayez besoin d'une simple vidange d'huile, d'une réparation de freins, ou d'une solution pour un problème de moteur complexe, nous sommes là pour vous aider. Notre engagement est de fournir un service fiable, transparent et efficace, en veillant à ce que votre expérience soit sans tracas et que votre voiture vous soit rendue dans un état optimal."
+        "Notre équipe de techniciens qualifiés est équipée pour gérer toutes sortes de problèmes mécaniques, que ce soit pour un entretien routinier ou des réparations complexes. Nous utilisons des pièces de rechange de qualité et des outils de diagnostic à la pointe de la technologie pour garantir que votre véhicule fonctionne à son meilleur niveau. Que vous ayez besoin d'une simple vidange d'huile, d'une réparation de freins, ou d'une solution pour un problème de moteur complexe, nous sommes là pour vous aider."
   },
   {
     "image": "https://pmuxdgydlrpgzmndnfon.supabase.co/storage/v1/object/public/cars/services/service3.jpeg?t=2024-02-09T09%3A32%3A45.621Z",

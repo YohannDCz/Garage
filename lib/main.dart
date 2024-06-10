@@ -67,8 +67,8 @@ class GarageApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Garage V. Parrot',
           theme: appTheme,
-          // initialRoute: '/signin',
-          home: const About(),
+          initialRoute: '/signin',
+          // home: const About(),
           routes: {
             '/signin': (context) => const SignIn(),
             '/signup': (context) => const SignUp(),

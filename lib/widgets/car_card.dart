@@ -37,7 +37,7 @@ class _CarCardState extends State<CarCard> {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxHeight: 512.0,
+          maxHeight: 526.0,
           maxWidth: widget.width ?? 372.0,
         ),
         child: Card(
